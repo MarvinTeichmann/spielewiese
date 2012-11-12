@@ -41,7 +41,9 @@ void Draw(Bitmap *b)
 {
 	ClearBitmap(b);
 	DrawRLEBitmap(b, &testbild, 25, 25);
-	DrawFilledCircle(b, 10, 10, 25, RGB(255,0,0));
+	//DrawFilledCircle(b, 50, 50, 15, RGB(255,0,0));
+	//DrawRectangle(b, 150,150,20,30, RGB(255,0,0));
+	
 
 
 }
