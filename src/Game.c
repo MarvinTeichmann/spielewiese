@@ -21,8 +21,12 @@ void Draw(Bitmap *);
 Gamestate InitState = { Init, OnEnter, OnLeave, Update, Draw };
 Game* TheGame = &(Game) {&InitState};
 
+uint8 x = 0;
+uint8 y = 0;
+
 void Init(struct Gamestate* state)
 {
+
 }
 
 void OnEnter(struct Gamestate* state)
