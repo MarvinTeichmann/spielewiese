@@ -220,15 +220,21 @@ Common symbol       size              file
 
 SDIO_CmdInitStructure
                     0x14              /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+button_delay        0x2               /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 errno               0x4               /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-reent.o)
+spider_x            0x2               /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 drawingSurface      0x4               /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
+state               0x2               /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 frame1              0xc               /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
 SDCardInfo          0x58              /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
 SDIO_InitStructure  0x18              /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
 SDIO_DataInitStructure
                     0x18              /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
 frame2              0xc               /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
+spider_y            0x2               /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 currentFont         0x4               /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Font.o)
+spider_delay        0x2               /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+spider_dir          0x2               /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 
 Discarded input sections
 
@@ -271,8 +277,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
  .data          0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
  .bss           0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
- .text.GetControllerState1
-                0x0000000000000000        0xc /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
  .text.GetControllerState2
                 0x0000000000000000        0xc /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
  .text          0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
@@ -4091,7 +4095,7 @@ Linker script and memory map
 
                 0x0000000010010000                _estack = 0x10010000
 
-.text           0x0000000008000000     0x4c24
+.text           0x0000000008000000     0x4dec
                 0x0000000008000000                _text = .
                 0x0000000008000000                __isr_vector_start = .
  *(.isr_vector)
@@ -4120,499 +4124,505 @@ Linker script and memory map
  .text.InitializeSnesController
                 0x00000000080002b0       0xc0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
                 0x00000000080002b0                InitializeSnesController
+ .text.GetControllerState1
+                0x0000000008000370        0xc /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
+                0x0000000008000370                GetControllerState1
  .text.HandleSnesTimerIRQ
-                0x0000000008000370      0x130 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
-                0x0000000008000370                HandleSnesTimerIRQ
+                0x000000000800037c      0x130 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
+                0x000000000800037c                HandleSnesTimerIRQ
  .text.HardFault_Handler
-                0x00000000080004a0       0x1c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
-                0x00000000080004a0                HardFault_Handler
+                0x00000000080004ac       0x1c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
+                0x00000000080004ac                HardFault_Handler
  .text.Default_Handler
-                0x00000000080004bc       0x1c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
-                0x00000000080004bc                RTC_Alarm_IRQHandler
-                0x00000000080004bc                HASH_RNG_IRQHandler
-                0x00000000080004bc                EXTI2_IRQHandler
-                0x00000000080004bc                TIM8_CC_IRQHandler
-                0x00000000080004bc                SVCall_Handler
-                0x00000000080004bc                DebugMon_Handler
-                0x00000000080004bc                TIM1_CC_IRQHandler
-                0x00000000080004bc                DMA2_Stream5_IRQHandler
-                0x00000000080004bc                DMA1_Stream5_IRQHandler
-                0x00000000080004bc                PVD_IRQHandler
-                0x00000000080004bc                TAMP_STAMP_IRQHandler
-                0x00000000080004bc                PendSV_Handler
-                0x00000000080004bc                NMI_Handler
-                0x00000000080004bc                CAN2_RX1_IRQHandler
-                0x00000000080004bc                EXTI3_IRQHandler
-                0x00000000080004bc                TIM8_TRG_COM_TIM14_IRQHandler
-                0x00000000080004bc                TIM1_UP_TIM10_IRQHandler
-                0x00000000080004bc                TIM8_UP_TIM13_IRQHandler
-                0x00000000080004bc                I2C3_ER_IRQHandler
-                0x00000000080004bc                EXTI0_IRQHandler
-                0x00000000080004bc                I2C2_EV_IRQHandler
-                0x00000000080004bc                DMA1_Stream2_IRQHandler
-                0x00000000080004bc                CAN1_RX0_IRQHandler
-                0x00000000080004bc                FPU_IRQHandler
-                0x00000000080004bc                OTG_HS_WKUP_IRQHandler
-                0x00000000080004bc                UsageFault_Handler
-                0x00000000080004bc                CAN2_SCE_IRQHandler
-                0x00000000080004bc                DMA2_Stream2_IRQHandler
-                0x00000000080004bc                SPI1_IRQHandler
-                0x00000000080004bc                TIM6_DAC_IRQHandler
-                0x00000000080004bc                DCMI_IRQHandler
-                0x00000000080004bc                CAN2_RX0_IRQHandler
-                0x00000000080004bc                USART6_IRQHandler
-                0x00000000080004bc                USART3_IRQHandler
-                0x00000000080004bc                CRYP_IRQHandler
-                0x00000000080004bc                CAN1_RX1_IRQHandler
-                0x00000000080004bc                UART5_IRQHandler
-                0x00000000080004bc                DMA2_Stream0_IRQHandler
-                0x00000000080004bc                TIM4_IRQHandler
-                0x00000000080004bc                I2C1_EV_IRQHandler
-                0x00000000080004bc                DMA1_Stream6_IRQHandler
-                0x00000000080004bc                DMA1_Stream1_IRQHandler
-                0x00000000080004bc                UART4_IRQHandler
-                0x00000000080004bc                TIM3_IRQHandler
-                0x00000000080004bc                RCC_IRQHandler
-                0x00000000080004bc                TIM8_BRK_TIM12_IRQHandler
-                0x00000000080004bc                Default_Handler
-                0x00000000080004bc                EXTI15_10_IRQHandler
-                0x00000000080004bc                ADC_IRQHandler
-                0x00000000080004bc                DMA1_Stream7_IRQHandler
-                0x00000000080004bc                TIM7_IRQHandler
-                0x00000000080004bc                CAN2_TX_IRQHandler
-                0x00000000080004bc                TIM5_IRQHandler
-                0x00000000080004bc                DMA2_Stream7_IRQHandler
-                0x00000000080004bc                I2C3_EV_IRQHandler
-                0x00000000080004bc                EXTI9_5_IRQHandler
-                0x00000000080004bc                RTC_WKUP_IRQHandler
-                0x00000000080004bc                ETH_WKUP_IRQHandler
-                0x00000000080004bc                SPI2_IRQHandler
-                0x00000000080004bc                OTG_HS_EP1_IN_IRQHandler
-                0x00000000080004bc                MemManage_Handler
-                0x00000000080004bc                DMA1_Stream0_IRQHandler
-                0x00000000080004bc                CAN1_TX_IRQHandler
-                0x00000000080004bc                EXTI4_IRQHandler
-                0x00000000080004bc                FSMC_IRQHandler
-                0x00000000080004bc                ETH_IRQHandler
-                0x00000000080004bc                OTG_HS_EP1_OUT_IRQHandler
-                0x00000000080004bc                WWDG_IRQHandler
-                0x00000000080004bc                OTG_FS_WKUP_IRQHandler
-                0x00000000080004bc                TIM1_TRG_COM_TIM11_IRQHandler
-                0x00000000080004bc                OTG_HS_IRQHandler
-                0x00000000080004bc                EXTI1_IRQHandler
-                0x00000000080004bc                USART2_IRQHandler
-                0x00000000080004bc                I2C2_ER_IRQHandler
-                0x00000000080004bc                CAN1_SCE_IRQHandler
-                0x00000000080004bc                FLASH_IRQHandler
-                0x00000000080004bc                DMA2_Stream4_IRQHandler
-                0x00000000080004bc                BusFault_Handler
-                0x00000000080004bc                USART1_IRQHandler
-                0x00000000080004bc                OTG_FS_IRQHandler
-                0x00000000080004bc                SPI3_IRQHandler
-                0x00000000080004bc                DMA1_Stream4_IRQHandler
-                0x00000000080004bc                I2C1_ER_IRQHandler
-                0x00000000080004bc                DMA2_Stream6_IRQHandler
-                0x00000000080004bc                DMA1_Stream3_IRQHandler
+                0x00000000080004c8       0x1c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
+                0x00000000080004c8                RTC_Alarm_IRQHandler
+                0x00000000080004c8                HASH_RNG_IRQHandler
+                0x00000000080004c8                EXTI2_IRQHandler
+                0x00000000080004c8                TIM8_CC_IRQHandler
+                0x00000000080004c8                SVCall_Handler
+                0x00000000080004c8                DebugMon_Handler
+                0x00000000080004c8                TIM1_CC_IRQHandler
+                0x00000000080004c8                DMA2_Stream5_IRQHandler
+                0x00000000080004c8                DMA1_Stream5_IRQHandler
+                0x00000000080004c8                PVD_IRQHandler
+                0x00000000080004c8                TAMP_STAMP_IRQHandler
+                0x00000000080004c8                PendSV_Handler
+                0x00000000080004c8                NMI_Handler
+                0x00000000080004c8                CAN2_RX1_IRQHandler
+                0x00000000080004c8                EXTI3_IRQHandler
+                0x00000000080004c8                TIM8_TRG_COM_TIM14_IRQHandler
+                0x00000000080004c8                TIM1_UP_TIM10_IRQHandler
+                0x00000000080004c8                TIM8_UP_TIM13_IRQHandler
+                0x00000000080004c8                I2C3_ER_IRQHandler
+                0x00000000080004c8                EXTI0_IRQHandler
+                0x00000000080004c8                I2C2_EV_IRQHandler
+                0x00000000080004c8                DMA1_Stream2_IRQHandler
+                0x00000000080004c8                CAN1_RX0_IRQHandler
+                0x00000000080004c8                FPU_IRQHandler
+                0x00000000080004c8                OTG_HS_WKUP_IRQHandler
+                0x00000000080004c8                UsageFault_Handler
+                0x00000000080004c8                CAN2_SCE_IRQHandler
+                0x00000000080004c8                DMA2_Stream2_IRQHandler
+                0x00000000080004c8                SPI1_IRQHandler
+                0x00000000080004c8                TIM6_DAC_IRQHandler
+                0x00000000080004c8                DCMI_IRQHandler
+                0x00000000080004c8                CAN2_RX0_IRQHandler
+                0x00000000080004c8                USART6_IRQHandler
+                0x00000000080004c8                USART3_IRQHandler
+                0x00000000080004c8                CRYP_IRQHandler
+                0x00000000080004c8                CAN1_RX1_IRQHandler
+                0x00000000080004c8                UART5_IRQHandler
+                0x00000000080004c8                DMA2_Stream0_IRQHandler
+                0x00000000080004c8                TIM4_IRQHandler
+                0x00000000080004c8                I2C1_EV_IRQHandler
+                0x00000000080004c8                DMA1_Stream6_IRQHandler
+                0x00000000080004c8                DMA1_Stream1_IRQHandler
+                0x00000000080004c8                UART4_IRQHandler
+                0x00000000080004c8                TIM3_IRQHandler
+                0x00000000080004c8                RCC_IRQHandler
+                0x00000000080004c8                TIM8_BRK_TIM12_IRQHandler
+                0x00000000080004c8                Default_Handler
+                0x00000000080004c8                EXTI15_10_IRQHandler
+                0x00000000080004c8                ADC_IRQHandler
+                0x00000000080004c8                DMA1_Stream7_IRQHandler
+                0x00000000080004c8                TIM7_IRQHandler
+                0x00000000080004c8                CAN2_TX_IRQHandler
+                0x00000000080004c8                TIM5_IRQHandler
+                0x00000000080004c8                DMA2_Stream7_IRQHandler
+                0x00000000080004c8                I2C3_EV_IRQHandler
+                0x00000000080004c8                EXTI9_5_IRQHandler
+                0x00000000080004c8                RTC_WKUP_IRQHandler
+                0x00000000080004c8                ETH_WKUP_IRQHandler
+                0x00000000080004c8                SPI2_IRQHandler
+                0x00000000080004c8                OTG_HS_EP1_IN_IRQHandler
+                0x00000000080004c8                MemManage_Handler
+                0x00000000080004c8                DMA1_Stream0_IRQHandler
+                0x00000000080004c8                CAN1_TX_IRQHandler
+                0x00000000080004c8                EXTI4_IRQHandler
+                0x00000000080004c8                FSMC_IRQHandler
+                0x00000000080004c8                ETH_IRQHandler
+                0x00000000080004c8                OTG_HS_EP1_OUT_IRQHandler
+                0x00000000080004c8                WWDG_IRQHandler
+                0x00000000080004c8                OTG_FS_WKUP_IRQHandler
+                0x00000000080004c8                TIM1_TRG_COM_TIM11_IRQHandler
+                0x00000000080004c8                OTG_HS_IRQHandler
+                0x00000000080004c8                EXTI1_IRQHandler
+                0x00000000080004c8                USART2_IRQHandler
+                0x00000000080004c8                I2C2_ER_IRQHandler
+                0x00000000080004c8                CAN1_SCE_IRQHandler
+                0x00000000080004c8                FLASH_IRQHandler
+                0x00000000080004c8                DMA2_Stream4_IRQHandler
+                0x00000000080004c8                BusFault_Handler
+                0x00000000080004c8                USART1_IRQHandler
+                0x00000000080004c8                OTG_FS_IRQHandler
+                0x00000000080004c8                SPI3_IRQHandler
+                0x00000000080004c8                DMA1_Stream4_IRQHandler
+                0x00000000080004c8                I2C1_ER_IRQHandler
+                0x00000000080004c8                DMA2_Stream6_IRQHandler
+                0x00000000080004c8                DMA1_Stream3_IRQHandler
  .text.Reset_Handler
-                0x00000000080004d8       0x5c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
-                0x00000000080004d8                Reset_Handler
+                0x00000000080004e4       0x5c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
+                0x00000000080004e4                Reset_Handler
  .text.SystemInit
-                0x0000000008000534      0x150 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SystemInit.o)
-                0x0000000008000534                SystemInit
+                0x0000000008000540      0x150 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SystemInit.o)
+                0x0000000008000540                SystemInit
  .text.MyUSART_Init
-                0x0000000008000684       0xd4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(USART.o)
-                0x0000000008000684                MyUSART_Init
+                0x0000000008000690       0xd4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(USART.o)
+                0x0000000008000690                MyUSART_Init
  .text.USART_SendChar
-                0x0000000008000758       0x24 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(USART.o)
-                0x0000000008000758                USART_SendChar
+                0x0000000008000764       0x24 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(USART.o)
+                0x0000000008000764                USART_SendChar
  .text.startup.main
-                0x000000000800077c      0x1d8 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
-                0x000000000800077c                main
+                0x0000000008000788      0x1d8 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
+                0x0000000008000788                main
  .text.EnableDebugOutput
-                0x0000000008000954       0x2c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Debug.o)
-                0x0000000008000954                EnableDebugOutput
+                0x0000000008000960       0x2c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Debug.o)
+                0x0000000008000960                EnableDebugOutput
  .text.DebugPrintChar
-                0x0000000008000980       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Debug.o)
-                0x0000000008000980                DebugPrintChar
+                0x000000000800098c       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Debug.o)
+                0x000000000800098c                DebugPrintChar
  .text.SysTick_Handler
-                0x0000000008000990       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SysTick.o)
-                0x0000000008000990                SysTick_Handler
+                0x000000000800099c       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SysTick.o)
+                0x000000000800099c                SysTick_Handler
  .text.__get_file
-                0x00000000080009a0       0x34 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x00000000080009ac       0x34 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
  .text._file_close
-                0x00000000080009d4       0x68 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
-                0x00000000080009d4                _file_close
+                0x00000000080009e0       0x68 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x00000000080009e0                _file_close
  .text._file_read
-                0x0000000008000a3c       0x50 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
-                0x0000000008000a3c                _file_read
+                0x0000000008000a48       0x50 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x0000000008000a48                _file_read
  .text._file_write
-                0x0000000008000a8c       0x50 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
-                0x0000000008000a8c                _file_write
+                0x0000000008000a98       0x50 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x0000000008000a98                _file_write
  .text._file_fstat
-                0x0000000008000adc       0x44 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
-                0x0000000008000adc                _file_fstat
+                0x0000000008000ae8       0x44 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x0000000008000ae8                _file_fstat
  .text._file_lseek
-                0x0000000008000b20       0x7c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
-                0x0000000008000b20                _file_lseek
+                0x0000000008000b2c       0x7c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x0000000008000b2c                _file_lseek
  .text._file_isatty
-                0x0000000008000b9c       0x4c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
-                0x0000000008000b9c                _file_isatty
+                0x0000000008000ba8       0x4c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Filesystem.o)
+                0x0000000008000ba8                _file_isatty
  .text.disk_status
-                0x0000000008000be8       0x14 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000be8                disk_status
+                0x0000000008000bf4       0x14 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000bf4                disk_status
  .text.disk_read
-                0x0000000008000bfc       0x48 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000bfc                disk_read
+                0x0000000008000c08       0x48 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000c08                disk_read
  .text.disk_write
-                0x0000000008000c44       0x48 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000c44                disk_write
+                0x0000000008000c50       0x48 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000c50                disk_write
  .text.disk_ioctl
-                0x0000000008000c8c       0x44 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000c8c                disk_ioctl
+                0x0000000008000c98       0x44 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000c98                disk_ioctl
  .text.get_fattime
-                0x0000000008000cd0        0x4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000cd0                get_fattime
+                0x0000000008000cdc        0x4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000cdc                get_fattime
  .text.SDIO_IRQHandler
-                0x0000000008000cd4        0x4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000cd4                SDIO_IRQHandler
+                0x0000000008000ce0        0x4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000ce0                SDIO_IRQHandler
  .text.DMA2_Stream3_IRQHandler
-                0x0000000008000cd8        0x4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
-                0x0000000008000cd8                DMA2_Stream3_IRQHandler
+                0x0000000008000ce4        0x4 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(DiskIO.o)
+                0x0000000008000ce4                DMA2_Stream3_IRQHandler
  .text.InitializePixelDMA
-                0x0000000008000cdc       0x4c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000ce8       0x4c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
  .text.HSYNCHandler200
-                0x0000000008000d28      0x110 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000d34      0x110 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
  .text.InitializeVGAPort
-                0x0000000008000e38       0x98 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008000e38                InitializeVGAPort
+                0x0000000008000e44       0x98 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000e44                InitializeVGAPort
  .text.InitializeVGAHorizontalSync31kHz
-                0x0000000008000ed0       0x64 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008000ed0                InitializeVGAHorizontalSync31kHz
+                0x0000000008000edc       0x64 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000edc                InitializeVGAHorizontalSync31kHz
  .text.InitializeVGAScreenMode200
-                0x0000000008000f34       0x6c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008000f34                InitializeVGAScreenMode200
+                0x0000000008000f40       0x6c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000f40                InitializeVGAScreenMode200
  .text.DMA2_Stream1_IRQHandler
-                0x0000000008000fa0       0x50 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008000fa0                DMA2_Stream1_IRQHandler
+                0x0000000008000fac       0x50 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000fac                DMA2_Stream1_IRQHandler
  .text.TIM1_BRK_TIM9_IRQHandler
-                0x0000000008000ff0       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008000ff0                TIM1_BRK_TIM9_IRQHandler
- .text.WaitVBL  0x0000000008001000       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008001000                WaitVBL
+                0x0000000008000ffc       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x0000000008000ffc                TIM1_BRK_TIM9_IRQHandler
+ .text.WaitVBL  0x000000000800100c       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x000000000800100c                WaitVBL
  .text.SetFrameBuffer
-                0x0000000008001010       0x18 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
-                0x0000000008001010                SetFrameBuffer
+                0x000000000800101c       0x18 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(VGA.o)
+                0x000000000800101c                SetFrameBuffer
  .text.InitializeRandom
-                0x0000000008001028       0x24 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Random.o)
-                0x0000000008001028                InitializeRandom
+                0x0000000008001034       0x24 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Random.o)
+                0x0000000008001034                InitializeRandom
  .text.InitializeUserInterface
-                0x000000000800104c       0x6c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(UserInterface.o)
-                0x000000000800104c                InitializeUserInterface
+                0x0000000008001058       0x6c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(UserInterface.o)
+                0x0000000008001058                InitializeUserInterface
  .text.TIM2_IRQHandler
-                0x00000000080010b8       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(UserInterface.o)
-                0x00000000080010b8                TIM2_IRQHandler
+                0x00000000080010c4       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(UserInterface.o)
+                0x00000000080010c4                TIM2_IRQHandler
  .text.CurrentPushButtonState
-                0x00000000080010c8       0x7c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(PushButtons.o)
-                0x00000000080010c8                CurrentPushButtonState
+                0x00000000080010d4       0x7c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(PushButtons.o)
+                0x00000000080010d4                CurrentPushButtonState
  .text.InitializePushButtons
-                0x0000000008001144       0xb0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(PushButtons.o)
-                0x0000000008001144                InitializePushButtons
+                0x0000000008001150       0xb0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(PushButtons.o)
+                0x0000000008001150                InitializePushButtons
  .text.HandlePushbuttonTimerIRQ
-                0x00000000080011f4       0xc0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(PushButtons.o)
-                0x00000000080011f4                HandlePushbuttonTimerIRQ
+                0x0000000008001200       0xc0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(PushButtons.o)
+                0x0000000008001200                HandlePushbuttonTimerIRQ
  .text.NVIC_PriorityGroupConfig
-                0x00000000080012b4       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(misc.o)
-                0x00000000080012b4                NVIC_PriorityGroupConfig
+                0x00000000080012c0       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(misc.o)
+                0x00000000080012c0                NVIC_PriorityGroupConfig
  .text.NVIC_Init
-                0x00000000080012c8       0x80 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(misc.o)
-                0x00000000080012c8                NVIC_Init
+                0x00000000080012d4       0x80 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(misc.o)
+                0x00000000080012d4                NVIC_Init
  .text.TIM_TimeBaseInit
-                0x0000000008001348       0x98 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
-                0x0000000008001348                TIM_TimeBaseInit
- .text.TIM_Cmd  0x00000000080013e0       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
-                0x00000000080013e0                TIM_Cmd
+                0x0000000008001354       0x98 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
+                0x0000000008001354                TIM_TimeBaseInit
+ .text.TIM_Cmd  0x00000000080013ec       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
+                0x00000000080013ec                TIM_Cmd
  .text.TIM_ITConfig
-                0x00000000080013fc       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
-                0x00000000080013fc                TIM_ITConfig
+                0x0000000008001408       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
+                0x0000000008001408                TIM_ITConfig
  .text.TIM_ClearITPendingBit
-                0x0000000008001410        0x8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
-                0x0000000008001410                TIM_ClearITPendingBit
+                0x000000000800141c        0x8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_tim.o)
+                0x000000000800141c                TIM_ClearITPendingBit
  .text.SDIO_SendCommand
-                0x0000000008001418       0x30 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x0000000008001418                SDIO_SendCommand
+                0x0000000008001424       0x30 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x0000000008001424                SDIO_SendCommand
  .text.SDIO_GetCommandResponse
-                0x0000000008001448       0x10 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x0000000008001448                SDIO_GetCommandResponse
+                0x0000000008001454       0x10 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x0000000008001454                SDIO_GetCommandResponse
  .text.SDIO_GetResponse
-                0x0000000008001458       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x0000000008001458                SDIO_GetResponse
+                0x0000000008001464       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x0000000008001464                SDIO_GetResponse
  .text.SDIO_DataConfig
-                0x0000000008001474       0x30 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x0000000008001474                SDIO_DataConfig
+                0x0000000008001480       0x30 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x0000000008001480                SDIO_DataConfig
  .text.SDIO_ReadData
-                0x00000000080014a4       0x10 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x00000000080014a4                SDIO_ReadData
+                0x00000000080014b0       0x10 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x00000000080014b0                SDIO_ReadData
  .text.SDIO_WriteData
-                0x00000000080014b4       0x10 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x00000000080014b4                SDIO_WriteData
+                0x00000000080014c0       0x10 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x00000000080014c0                SDIO_WriteData
  .text.SDIO_ITConfig
-                0x00000000080014c4       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x00000000080014c4                SDIO_ITConfig
+                0x00000000080014d0       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x00000000080014d0                SDIO_ITConfig
  .text.SDIO_GetFlagStatus
-                0x00000000080014e0       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x00000000080014e0                SDIO_GetFlagStatus
+                0x00000000080014ec       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x00000000080014ec                SDIO_GetFlagStatus
  .text.SDIO_ClearFlag
-                0x00000000080014f4        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x00000000080014f4                SDIO_ClearFlag
+                0x0000000008001500        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x0000000008001500                SDIO_ClearFlag
  .text.SDIO_GetITStatus
-                0x0000000008001500       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x0000000008001500                SDIO_GetITStatus
+                0x000000000800150c       0x14 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x000000000800150c                SDIO_GetITStatus
  .text.SDIO_ClearITPendingBit
-                0x0000000008001514        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
-                0x0000000008001514                SDIO_ClearITPendingBit
+                0x0000000008001520        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_sdio.o)
+                0x0000000008001520                SDIO_ClearITPendingBit
  .text.USART_Init
-                0x0000000008001520       0xd8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
-                0x0000000008001520                USART_Init
+                0x000000000800152c       0xd8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
+                0x000000000800152c                USART_Init
  .text.USART_ClockInit
-                0x00000000080015f8       0x24 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
-                0x00000000080015f8                USART_ClockInit
+                0x0000000008001604       0x24 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
+                0x0000000008001604                USART_ClockInit
  .text.USART_ClockStructInit
-                0x000000000800161c        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
-                0x000000000800161c                USART_ClockStructInit
+                0x0000000008001628        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
+                0x0000000008001628                USART_ClockStructInit
  .text.USART_Cmd
-                0x0000000008001628       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
-                0x0000000008001628                USART_Cmd
+                0x0000000008001634       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
+                0x0000000008001634                USART_Cmd
  .text.USART_SendData
-                0x0000000008001644        0x8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
-                0x0000000008001644                USART_SendData
+                0x0000000008001650        0x8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
+                0x0000000008001650                USART_SendData
  .text.USART_GetFlagStatus
-                0x000000000800164c        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
-                0x000000000800164c                USART_GetFlagStatus
+                0x0000000008001658        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_usart.o)
+                0x0000000008001658                USART_GetFlagStatus
  .text.RCC_GetClocksFreq
-                0x0000000008001658       0xb0 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
-                0x0000000008001658                RCC_GetClocksFreq
+                0x0000000008001664       0xb0 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
+                0x0000000008001664                RCC_GetClocksFreq
  .text.RCC_AHB1PeriphClockCmd
-                0x0000000008001708       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
-                0x0000000008001708                RCC_AHB1PeriphClockCmd
+                0x0000000008001714       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
+                0x0000000008001714                RCC_AHB1PeriphClockCmd
  .text.RCC_AHB2PeriphClockCmd
-                0x0000000008001724       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
-                0x0000000008001724                RCC_AHB2PeriphClockCmd
+                0x0000000008001730       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
+                0x0000000008001730                RCC_AHB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x0000000008001740       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
-                0x0000000008001740                RCC_APB1PeriphClockCmd
+                0x000000000800174c       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
+                0x000000000800174c                RCC_APB1PeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x000000000800175c       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
-                0x000000000800175c                RCC_APB2PeriphClockCmd
+                0x0000000008001768       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rcc.o)
+                0x0000000008001768                RCC_APB2PeriphClockCmd
  .text.DMA_ClearFlag
-                0x0000000008001778       0x38 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_dma.o)
-                0x0000000008001778                DMA_ClearFlag
+                0x0000000008001784       0x38 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_dma.o)
+                0x0000000008001784                DMA_ClearFlag
  .text.GPIO_Init
-                0x00000000080017b0       0xb8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
-                0x00000000080017b0                GPIO_Init
+                0x00000000080017bc       0xb8 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
+                0x00000000080017bc                GPIO_Init
  .text.GPIO_ReadInputDataBit
-                0x0000000008001868        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
-                0x0000000008001868                GPIO_ReadInputDataBit
+                0x0000000008001874        0xc /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
+                0x0000000008001874                GPIO_ReadInputDataBit
  .text.GPIO_SetBits
-                0x0000000008001874        0x4 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
-                0x0000000008001874                GPIO_SetBits
+                0x0000000008001880        0x4 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
+                0x0000000008001880                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x0000000008001878        0x4 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
-                0x0000000008001878                GPIO_ResetBits
+                0x0000000008001884        0x4 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
+                0x0000000008001884                GPIO_ResetBits
  .text.GPIO_PinAFConfig
-                0x000000000800187c       0x30 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
-                0x000000000800187c                GPIO_PinAFConfig
- .text.RNG_Cmd  0x00000000080018ac       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rng.o)
-                0x00000000080018ac                RNG_Cmd
+                0x0000000008001888       0x30 /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_gpio.o)
+                0x0000000008001888                GPIO_PinAFConfig
+ .text.RNG_Cmd  0x00000000080018b8       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rng.o)
+                0x00000000080018b8                RNG_Cmd
  .text.RNG_ITConfig
-                0x00000000080018c8       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rng.o)
-                0x00000000080018c8                RNG_ITConfig
+                0x00000000080018d4       0x1c /home/marvin/u23/U23-Library/libs/libstm32f4xx/libstm32f4xx.a(stm32f4xx_rng.o)
+                0x00000000080018d4                RNG_ITConfig
  .text.validate
-                0x00000000080018e4       0x28 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x00000000080018f0       0x28 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
  .text.move_window
-                0x000000000800190c       0x7c /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
- .text.sync     0x0000000008001988       0xc8 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
- .text.get_fat  0x0000000008001a50       0xd0 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x0000000008001a50                get_fat
- .text.put_fat  0x0000000008001b20      0x110 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x0000000008001b20                put_fat
+                0x0000000008001918       0x7c /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+ .text.sync     0x0000000008001994       0xc8 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+ .text.get_fat  0x0000000008001a5c       0xd0 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008001a5c                get_fat
+ .text.put_fat  0x0000000008001b2c      0x110 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008001b2c                put_fat
  .text.create_chain
-                0x0000000008001c30       0xb0 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
- .text.f_read   0x0000000008001ce0      0x198 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x0000000008001ce0                f_read
- .text.f_write  0x0000000008001e78      0x1ec /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x0000000008001e78                f_write
- .text.f_sync   0x0000000008002064       0xa8 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x0000000008002064                f_sync
- .text.f_close  0x000000000800210c       0x10 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x000000000800210c                f_close
- .text.f_lseek  0x000000000800211c      0x180 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
-                0x000000000800211c                f_lseek
+                0x0000000008001c3c       0xb0 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+ .text.f_read   0x0000000008001cec      0x198 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008001cec                f_read
+ .text.f_write  0x0000000008001e84      0x1ec /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008001e84                f_write
+ .text.f_sync   0x0000000008002070       0xa8 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008002070                f_sync
+ .text.f_close  0x0000000008002118       0x10 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008002118                f_close
+ .text.f_lseek  0x0000000008002128      0x180 /home/marvin/u23/U23-Library/libs/libfatfs/libfatfs.a(ff.o)
+                0x0000000008002128                f_lseek
  .text.CmdResp1Error
-                0x000000000800229c       0xf4 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x00000000080022a8       0xf4 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
  .text.SD_Detect
-                0x0000000008002390       0x28 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x0000000008002390                SD_Detect
+                0x000000000800239c       0x28 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x000000000800239c                SD_Detect
  .text.SD_GetCardInfo
-                0x00000000080023b8      0x300 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x00000000080023b8                SD_GetCardInfo
+                0x00000000080023c4      0x300 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x00000000080023c4                SD_GetCardInfo
  .text.SD_ReadBlock
-                0x00000000080026b8      0x170 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x00000000080026b8                SD_ReadBlock
+                0x00000000080026c4      0x170 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x00000000080026c4                SD_ReadBlock
  .text.SD_WriteBlock
-                0x0000000008002828      0x174 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x0000000008002828                SD_WriteBlock
+                0x0000000008002834      0x174 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x0000000008002834                SD_WriteBlock
  .text.SD_SendStatus
-                0x000000000800299c       0x4c /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x000000000800299c                SD_SendStatus
+                0x00000000080029a8       0x4c /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x00000000080029a8                SD_SendStatus
  .text.SD_GetState
-                0x00000000080029e8       0x28 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x00000000080029e8                SD_GetState
+                0x00000000080029f4       0x28 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x00000000080029f4                SD_GetState
  .text.SD_GetStatus
-                0x0000000008002a10       0x18 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x0000000008002a10                SD_GetStatus
+                0x0000000008002a1c       0x18 /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x0000000008002a1c                SD_GetStatus
  .text.SD_ProcessIRQSrc
-                0x0000000008002a28       0xac /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x0000000008002a28                SD_ProcessIRQSrc
+                0x0000000008002a34       0xac /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x0000000008002a34                SD_ProcessIRQSrc
  .text.SD_ProcessDMAIRQ
-                0x0000000008002ad4       0x2c /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
-                0x0000000008002ad4                SD_ProcessDMAIRQ
+                0x0000000008002ae0       0x2c /home/marvin/u23/U23-Library/libs/libsdcard/libsdcard.a(sdcard.o)
+                0x0000000008002ae0                SD_ProcessDMAIRQ
  .text.InitializeBitmap
-                0x0000000008002b00        0xc /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(Bitmap.o)
-                0x0000000008002b00                InitializeBitmap
+                0x0000000008002b0c        0xc /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(Bitmap.o)
+                0x0000000008002b0c                InitializeBitmap
  .text.ClearBitmap
-                0x0000000008002b0c       0x14 /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(Bitmap.o)
-                0x0000000008002b0c                ClearBitmap
+                0x0000000008002b18       0x14 /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(Bitmap.o)
+                0x0000000008002b18                ClearBitmap
  .text.DrawRLEBitmapSpans
-                0x0000000008002b20       0xb8 /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(DrawingRLEBitmaps.o)
+                0x0000000008002b2c       0xb8 /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(DrawingRLEBitmaps.o)
  .text.DrawRLEBitmap
-                0x0000000008002bd8      0x14c /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(DrawingRLEBitmaps.o)
-                0x0000000008002bd8                DrawRLEBitmap
- .text          0x0000000008002d24        0xc /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-errno.o)
-                0x0000000008002d24                __errno
- .text          0x0000000008002d30       0x84 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fwrite.o)
-                0x0000000008002d30                _fwrite_r
-                0x0000000008002d90                fwrite
- .text          0x0000000008002db4       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memcpy-stub.o)
-                0x0000000008002db4                memcpy
- .text          0x0000000008002e48       0xbc /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memmove.o)
-                0x0000000008002e48                memmove
- .text          0x0000000008002f04       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memset.o)
-                0x0000000008002f04                memset
- .text          0x0000000008002f98      0x114 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-setvbuf.o)
-                0x0000000008002f98                setvbuf
- .text          0x00000000080030ac       0xe0 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wsetup.o)
-                0x00000000080030ac                __swsetup_r
- .text          0x000000000800318c      0x1ac /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fflush.o)
-                0x000000000800318c                __sflush_r
-                0x00000000080032e8                _fflush_r
-                0x0000000008003314                fflush
- .text          0x0000000008003338      0x1b4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-findfp.o)
-                0x0000000008003340                _cleanup_r
-                0x000000000800339c                __sfmoreglue
-                0x00000000080033c8                _cleanup
-                0x00000000080033d8                __sinit
-                0x0000000008003424                __sfp
-                0x00000000080034ac                __sfp_lock_acquire
-                0x00000000080034b0                __sfp_lock_release
-                0x00000000080034b4                __sinit_lock_acquire
-                0x00000000080034b8                __sinit_lock_release
-                0x00000000080034bc                __fp_lock_all
-                0x00000000080034d4                __fp_unlock_all
- .text          0x00000000080034ec      0x228 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-freer.o)
-                0x00000000080034ec                _malloc_trim_r
-                0x0000000008003584                _free_r
- .text          0x0000000008003714      0x318 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fvwrite.o)
-                0x0000000008003714                __sfvwrite_r
- .text          0x0000000008003a2c       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fwalk.o)
-                0x0000000008003a2c                _fwalk
-                0x0000000008003a74                _fwalk_reent
- .text          0x0000000008003ac0       0xe8 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-makebuf.o)
-                0x0000000008003ac0                __smakebuf_r
- .text          0x0000000008003ba8       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-malloc.o)
-                0x0000000008003ba8                malloc
-                0x0000000008003bb8                free
- .text          0x0000000008003bc8      0x554 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-mallocr.o)
-                0x0000000008003bc8                _malloc_r
- .text          0x000000000800411c       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memchr-stub.o)
-                0x000000000800411c                memchr
- .text          0x00000000080041b0        0x8 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-mlock.o)
-                0x00000000080041b0                __malloc_lock
-                0x00000000080041b4                __malloc_unlock
- .text          0x00000000080041b8      0x3ec /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-reallocr.o)
-                0x00000000080041b8                _realloc_r
- .text          0x00000000080045a4       0x24 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-sbrkr.o)
-                0x00000000080045a4                _sbrk_r
- .text          0x00000000080045c8       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-stdio.o)
-                0x00000000080045c8                __sread
-                0x00000000080045ec                __seofread
-                0x00000000080045f0                __swrite
-                0x0000000008004634                __sseek
-                0x0000000008004654                __sclose
- .text          0x000000000800465c       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-writer.o)
-                0x000000000800465c                _write_r
- .text          0x0000000008004684       0x24 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-closer.o)
-                0x0000000008004684                _close_r
- .text          0x00000000080046a8       0x98 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fclose.o)
-                0x00000000080046a8                _fclose_r
-                0x0000000008004730                fclose
- .text          0x0000000008004740       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fstatr.o)
-                0x0000000008004740                _fstat_r
- .text          0x0000000008004768       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-lseekr.o)
-                0x0000000008004768                _lseek_r
- .text          0x0000000008004790       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-readr.o)
-                0x0000000008004790                _read_r
- .text.Init     0x00000000080047b8        0x4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
-                0x00000000080047b8                Init
- .text.OnEnter  0x00000000080047bc        0x4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
-                0x00000000080047bc                OnEnter
- .text.OnLeave  0x00000000080047c0        0x4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
-                0x00000000080047c0                OnLeave
- .text.Update   0x00000000080047c4        0x4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
-                0x00000000080047c4                Update
- .text.Draw     0x00000000080047c8       0x20 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
-                0x00000000080047c8                Draw
+                0x0000000008002be4      0x14c /home/marvin/u23/U23-Library/libs/libgraphics/libgraphics.a(DrawingRLEBitmaps.o)
+                0x0000000008002be4                DrawRLEBitmap
+ .text          0x0000000008002d30        0xc /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-errno.o)
+                0x0000000008002d30                __errno
+ .text          0x0000000008002d3c       0x84 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fwrite.o)
+                0x0000000008002d3c                _fwrite_r
+                0x0000000008002d9c                fwrite
+ .text          0x0000000008002dc0       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memcpy-stub.o)
+                0x0000000008002dc0                memcpy
+ .text          0x0000000008002e54       0xbc /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memmove.o)
+                0x0000000008002e54                memmove
+ .text          0x0000000008002f10       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memset.o)
+                0x0000000008002f10                memset
+ .text          0x0000000008002fa4      0x114 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-setvbuf.o)
+                0x0000000008002fa4                setvbuf
+ .text          0x00000000080030b8       0xe0 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wsetup.o)
+                0x00000000080030b8                __swsetup_r
+ .text          0x0000000008003198      0x1ac /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fflush.o)
+                0x0000000008003198                __sflush_r
+                0x00000000080032f4                _fflush_r
+                0x0000000008003320                fflush
+ .text          0x0000000008003344      0x1b4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-findfp.o)
+                0x000000000800334c                _cleanup_r
+                0x00000000080033a8                __sfmoreglue
+                0x00000000080033d4                _cleanup
+                0x00000000080033e4                __sinit
+                0x0000000008003430                __sfp
+                0x00000000080034b8                __sfp_lock_acquire
+                0x00000000080034bc                __sfp_lock_release
+                0x00000000080034c0                __sinit_lock_acquire
+                0x00000000080034c4                __sinit_lock_release
+                0x00000000080034c8                __fp_lock_all
+                0x00000000080034e0                __fp_unlock_all
+ .text          0x00000000080034f8      0x228 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-freer.o)
+                0x00000000080034f8                _malloc_trim_r
+                0x0000000008003590                _free_r
+ .text          0x0000000008003720      0x318 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fvwrite.o)
+                0x0000000008003720                __sfvwrite_r
+ .text          0x0000000008003a38       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fwalk.o)
+                0x0000000008003a38                _fwalk
+                0x0000000008003a80                _fwalk_reent
+ .text          0x0000000008003acc       0xe8 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-makebuf.o)
+                0x0000000008003acc                __smakebuf_r
+ .text          0x0000000008003bb4       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-malloc.o)
+                0x0000000008003bb4                malloc
+                0x0000000008003bc4                free
+ .text          0x0000000008003bd4      0x554 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-mallocr.o)
+                0x0000000008003bd4                _malloc_r
+ .text          0x0000000008004128       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-memchr-stub.o)
+                0x0000000008004128                memchr
+ .text          0x00000000080041bc        0x8 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-mlock.o)
+                0x00000000080041bc                __malloc_lock
+                0x00000000080041c0                __malloc_unlock
+ .text          0x00000000080041c4      0x3ec /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-reallocr.o)
+                0x00000000080041c4                _realloc_r
+ .text          0x00000000080045b0       0x24 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-sbrkr.o)
+                0x00000000080045b0                _sbrk_r
+ .text          0x00000000080045d4       0x94 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-stdio.o)
+                0x00000000080045d4                __sread
+                0x00000000080045f8                __seofread
+                0x00000000080045fc                __swrite
+                0x0000000008004640                __sseek
+                0x0000000008004660                __sclose
+ .text          0x0000000008004668       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-writer.o)
+                0x0000000008004668                _write_r
+ .text          0x0000000008004690       0x24 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-closer.o)
+                0x0000000008004690                _close_r
+ .text          0x00000000080046b4       0x98 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fclose.o)
+                0x00000000080046b4                _fclose_r
+                0x000000000800473c                fclose
+ .text          0x000000000800474c       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fstatr.o)
+                0x000000000800474c                _fstat_r
+ .text          0x0000000008004774       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-lseekr.o)
+                0x0000000008004774                _lseek_r
+ .text          0x000000000800479c       0x28 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-readr.o)
+                0x000000000800479c                _read_r
+ .text.Init     0x00000000080047c4       0x34 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x00000000080047c4                Init
+ .text.OnEnter  0x00000000080047f8        0x4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x00000000080047f8                OnEnter
+ .text.OnLeave  0x00000000080047fc        0x4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x00000000080047fc                OnLeave
+ .text.Draw     0x0000000008004800       0x30 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x0000000008004800                Draw
+ .text.spider_move
+                0x0000000008004830       0xc4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x0000000008004830                spider_move
+ .text.Update   0x00000000080048f4       0xbc /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x00000000080048f4                Update
  *(.rodata*)
  .rodata.str1.4
-                0x00000000080047e8       0x6b /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
+                0x00000000080049b0       0x6b /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
                                          0x6c (size before relaxing)
- *fill*         0x0000000008004853        0x1 00
+ *fill*         0x0000000008004a1b        0x1 00
  .rodata.str1.4
-                0x0000000008004854       0x32 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
+                0x0000000008004a1c       0x32 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Startup.o)
                                          0x34 (size before relaxing)
- *fill*         0x0000000008004886        0x2 00
+ *fill*         0x0000000008004a4e        0x2 00
  .rodata.str1.4
-                0x0000000008004888       0x5d /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
+                0x0000000008004a50       0x5d /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(Main.o)
                                          0x60 (size before relaxing)
- *fill*         0x00000000080048e5        0x3 00
- .rodata        0x00000000080048e8        0x4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-impure.o)
-                0x00000000080048e8                _global_impure_ptr
+ *fill*         0x0000000008004aad        0x3 00
+ .rodata        0x0000000008004ab0        0x4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-impure.o)
+                0x0000000008004ab0                _global_impure_ptr
  .rodata.str1.4
-                0x00000000080048ec        0x4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-impure.o)
+                0x0000000008004ab4        0x4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-impure.o)
  .rodata.testbild
-                0x00000000080048f0      0x334 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
-                0x00000000080048f0                testbild
-                0x0000000008004c24                _etext = .
-                0x0000000008004c24                _idata = .
+                0x0000000008004ab8      0x334 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
+                0x0000000008004ab8                testbild
+                0x0000000008004dec                _etext = .
+                0x0000000008004dec                _idata = .
 
-.glue_7         0x0000000008004c24        0x0
+.glue_7         0x0000000008004dec        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000008004c24        0x0
+.glue_7t        0x0000000008004dec        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000008004c24        0x0
+.vfp11_veneer   0x0000000008004dec        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000008004c24        0x0
+.v4_bx          0x0000000008004dec        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000008004c24        0x0
+.iplt           0x0000000008004dec        0x0
  .iplt          0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
 
-.rel.dyn        0x0000000008004c24        0x0
+.rel.dyn        0x0000000008004dec        0x0
  .rel.iplt      0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
 
-.data           0x0000000010000000      0x874 load address 0x0000000008004c24
+.data           0x0000000010000000      0x874 load address 0x0000000008004dec
                 0x0000000010000000                _data = .
  *(vtable)
  *(.data*)
@@ -4633,10 +4643,10 @@ Linker script and memory map
                 0x0000000010000858                InitState
                 0x0000000010000874                _edata = .
 
-.igot.plt       0x0000000010000874        0x0 load address 0x0000000008005498
+.igot.plt       0x0000000010000874        0x0 load address 0x0000000008005660
  .igot.plt      0x0000000000000000        0x0 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
 
-.bss            0x0000000010000878      0x854 load address 0x00000000080054a0
+.bss            0x0000000010000878      0x860 load address 0x0000000008005668
                 0x0000000010000878                _bss = .
  *(.bss*)
  .bss.heap_end.5177
@@ -4738,8 +4748,15 @@ Linker script and memory map
                 0x00000000100010b0                SDIO_DataInitStructure
  COMMON         0x00000000100010c8        0x4 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-reent.o)
                 0x00000000100010c8                errno
-                0x00000000100010cc                _ebss = .
-                0x00000000100010cc                end = .
+ COMMON         0x00000000100010cc        0xc /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x00000000100010cc                button_delay
+                0x00000000100010ce                spider_x
+                0x00000000100010d0                state
+                0x00000000100010d2                spider_y
+                0x00000000100010d4                spider_delay
+                0x00000000100010d6                spider_dir
+                0x00000000100010d8                _ebss = .
+                0x00000000100010d8                end = .
                 0x0000000010001100                . = ALIGN (0x100)
                 0x0000000010001100                _start_heap = .
 
@@ -4991,7 +5008,7 @@ LOAD /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/
 END GROUP
 OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x58b21
+.debug_info     0x0000000000000000    0x58ccb
  .debug_info    0x0000000000000000      0x31d /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_info    0x000000000000031d     0x11c7 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
  .debug_info    0x00000000000014e4      0xa2f /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
@@ -5095,14 +5112,14 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_info    0x0000000000056251      0xa9b /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wbuf.o)
  .debug_info    0x0000000000056cec      0xb49 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wcrtomb.o)
  .debug_info    0x0000000000057835      0xa92 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
- .debug_info    0x00000000000582c7      0x3c4 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
- .debug_info    0x000000000005868b      0x12e /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
- .debug_info    0x00000000000587b9       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x0000000000058893       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
- .debug_info    0x000000000005896d       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
- .debug_info    0x0000000000058a47       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
+ .debug_info    0x00000000000582c7      0x56e /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+ .debug_info    0x0000000000058835      0x12e /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
+ .debug_info    0x0000000000058963       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x0000000000058a3d       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
+ .debug_info    0x0000000000058b17       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x0000000000058bf1       0xda /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
 
-.debug_abbrev   0x0000000000000000     0xcf18
+.debug_abbrev   0x0000000000000000     0xcf9d
  .debug_abbrev  0x0000000000000000      0x148 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_abbrev  0x0000000000000148      0x2bf /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
  .debug_abbrev  0x0000000000000407      0x1e6 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
@@ -5206,14 +5223,14 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_abbrev  0x000000000000c6a4      0x21a /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wbuf.o)
  .debug_abbrev  0x000000000000c8be      0x1f5 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wcrtomb.o)
  .debug_abbrev  0x000000000000cab3      0x210 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
- .debug_abbrev  0x000000000000ccc3      0x169 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
- .debug_abbrev  0x000000000000ce2c       0x9c /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
- .debug_abbrev  0x000000000000cec8       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
- .debug_abbrev  0x000000000000cedc       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
- .debug_abbrev  0x000000000000cef0       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
- .debug_abbrev  0x000000000000cf04       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
+ .debug_abbrev  0x000000000000ccc3      0x1ee /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+ .debug_abbrev  0x000000000000ceb1       0x9c /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
+ .debug_abbrev  0x000000000000cf4d       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x000000000000cf61       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
+ .debug_abbrev  0x000000000000cf75       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
+ .debug_abbrev  0x000000000000cf89       0x14 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
 
-.debug_loc      0x0000000000000000    0x334ef
+.debug_loc      0x0000000000000000    0x33571
  .debug_loc     0x0000000000000000       0x2c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_loc     0x000000000000002c      0x739 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
  .debug_loc     0x0000000000000765       0x4c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
@@ -5314,9 +5331,9 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_loc     0x0000000000032fed      0x170 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wbuf.o)
  .debug_loc     0x000000000003315d      0x23c /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wcrtomb.o)
  .debug_loc     0x0000000000033399      0x118 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
- .debug_loc     0x00000000000334b1       0x3e /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+ .debug_loc     0x00000000000334b1       0xc0 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 
-.debug_aranges  0x0000000000000000     0x2628
+.debug_aranges  0x0000000000000000     0x2630
  .debug_aranges
                 0x0000000000000000       0x20 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_aranges
@@ -5524,19 +5541,19 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_aranges
                 0x0000000000002530       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
  .debug_aranges
-                0x0000000000002550       0x40 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                0x0000000000002550       0x48 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
  .debug_aranges
-                0x0000000000002590       0x18 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
+                0x0000000000002598       0x18 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
  .debug_aranges
-                0x00000000000025a8       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
+                0x00000000000025b0       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
  .debug_aranges
-                0x00000000000025c8       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
+                0x00000000000025d0       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
  .debug_aranges
-                0x00000000000025e8       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
+                0x00000000000025f0       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
  .debug_aranges
-                0x0000000000002608       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
+                0x0000000000002610       0x20 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
 
-.debug_ranges   0x0000000000000000     0x5960
+.debug_ranges   0x0000000000000000     0x5968
  .debug_ranges  0x0000000000000000       0x10 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_ranges  0x0000000000000010       0x88 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
  .debug_ranges  0x0000000000000098       0x28 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
@@ -5607,9 +5624,9 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_ranges  0x0000000000005820       0xb0 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-vfiprintf.o)
  .debug_ranges  0x00000000000058d0       0x30 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-callocr.o)
  .debug_ranges  0x0000000000005900       0x30 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-fputwc.o)
- .debug_ranges  0x0000000000005930       0x30 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+ .debug_ranges  0x0000000000005930       0x38 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
 
-.debug_line     0x0000000000000000    0x148d6
+.debug_line     0x0000000000000000    0x149e8
  .debug_line    0x0000000000000000      0x17c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_line    0x000000000000017c      0x32c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
  .debug_line    0x00000000000004a8      0x25a /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
@@ -5713,14 +5730,14 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_line    0x0000000000013a5d      0x204 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wbuf.o)
  .debug_line    0x0000000000013c61      0x1b5 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wcrtomb.o)
  .debug_line    0x0000000000013e16      0x1b0 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
- .debug_line    0x0000000000013fc6      0x214 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
- .debug_line    0x00000000000141da      0x13a /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
- .debug_line    0x0000000000014314      0x20a /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x000000000001451e      0x226 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
- .debug_line    0x0000000000014744      0x10c /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
- .debug_line    0x0000000000014850       0x86 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
+ .debug_line    0x0000000000013fc6      0x326 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+ .debug_line    0x00000000000142ec      0x13a /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
+ .debug_line    0x0000000000014426      0x20a /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x0000000000014630      0x226 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_muldivdf3.o)
+ .debug_line    0x0000000000014856      0x10c /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_cmpdf2.o)
+ .debug_line    0x0000000000014962       0x86 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libgcc.a(_arm_fixdfsi.o)
 
-.debug_str      0x0000000000000000     0xb0d4
+.debug_str      0x0000000000000000     0xb117
  .debug_str     0x0000000000000000      0x298 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
                                         0x2dd (size before relaxing)
  .debug_str     0x0000000000000298      0x54a /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
@@ -5927,9 +5944,9 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
                                         0x56a (size before relaxing)
  .debug_str     0x000000000000afe0       0x63 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
                                         0x579 (size before relaxing)
- .debug_str     0x000000000000b043       0x50 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
-                                        0x1fb (size before relaxing)
- .debug_str     0x000000000000b093       0x41 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
+ .debug_str     0x000000000000b043       0x93 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+                                        0x29d (size before relaxing)
+ .debug_str     0x000000000000b0d6       0x41 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
                                         0x11b (size before relaxing)
 
 .comment        0x0000000000000000       0x11
@@ -6040,7 +6057,7 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .comment       0x0000000000000000       0x12 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
  .comment       0x0000000000000000       0x12 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/testbild.o
 
-.debug_frame    0x0000000000000000     0x57d4
+.debug_frame    0x0000000000000000     0x57f8
  .debug_frame   0x0000000000000000       0x28 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(LED.o)
  .debug_frame   0x0000000000000028      0x18c /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(NewlibSyscalls.o)
  .debug_frame   0x00000000000001b4       0x78 /home/marvin/u23/U23-Library/libs/libgaming/libgaming.a(SNES.o)
@@ -6143,4 +6160,4 @@ OUTPUT(/home/marvin/u23/U23-Library/firmware/spielewiese/spielewiese.elf elf32-l
  .debug_frame   0x000000000000568c       0x44 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wbuf.o)
  .debug_frame   0x00000000000056d0       0x58 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wcrtomb.o)
  .debug_frame   0x0000000000005728       0x44 /opt/STM32/lib/gcc/arm-none-eabi/4.7.1/../../../../arm-none-eabi/lib/thumb/cortex-m4/float-abi-hard/fpuv4-sp-d16/libc.a(lib_a-wctomb_r.o)
- .debug_frame   0x000000000000576c       0x68 /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
+ .debug_frame   0x000000000000576c       0x8c /home/marvin/u23/U23-Library/firmware/spielewiese/obj/Game.o
