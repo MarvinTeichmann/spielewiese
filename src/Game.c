@@ -76,8 +76,8 @@ void Update(uint32_t a)
 
 	if(spider_x >= 321) spider_x = 1;
 	if(spider_x <= 0) spider_x = 320;
-	if(spider_y >= 200) spider_y = 1;
-	if(spider_y <= 0) spider_y = 199;
+	if(spider_y >= 197) spider_y = 1;
+	if(spider_y <= 0) spider_y = 196;
 	
 
 }
