@@ -169,8 +169,8 @@ void Draw(Bitmap *b)
 {
 	ClearBitmap(b);
 	DrawRLEBitmap(b, &testbild, spider_x, spider_y);
-	//DrawFilledCircle(b, 50, 50, 15, RGB(255,0,0));
-	//DrawRectangle(b, 150,150,20,30, RGB(255,0,0));
+	//DrawFilledCircle(b, 50, 50, 15, RGB(255,255,0));
+	//DrawRectangle(b, 150,150,20,30, RGB(255,255,0));
 	
 
 
